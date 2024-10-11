@@ -1,9 +1,13 @@
 src/
-├── components/       # Reusable components (e.g., Card, Chart, Navbar)
-├── pages/            # Page components (Dashboard, Reports)
-├── hooks/            # Custom hooks (useFetch, useExpenseData)
-├── utils/            # Helper functions (formatData, calculateTrends)
-├── assets/           # Icons, images
-├── styles/           # Global styles, theme
+├── components/       # Reusable components (e.g., Form, Table, Card)
+│   ├── ExpenseForm.tsx         # Form for adding expenses
+│   ├── ExpenseTable.tsx        # Table for listing expenses with sorting/filtering
+│   ├── ExpenseChart.tsx        # Chart to visualize expense data
+├── pages/            # Full page components (Dashboard, Reports)
+│   ├── Dashboard.tsx          # Main dashboard page
+│   ├── Reports.tsx            # Reports page
+├── hooks/            # Custom hooks (e.g., useFetch)
+│   ├── useFetch.ts             # Custom hook to fetch data
+├── styles/           # Global and component-specific styles
 ├── App.tsx           # Main component with routes
-└── index.tsx         # Entry point
+└── Main.tsx         # Entry point

@@ -1,0 +1,25 @@
+/* src/styles/ExpenseTable.css */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff; /* Set table background to white */
+  color: #333; /* Ensure text color is dark */
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  color: #333; /* Set text color to dark */
+}
+
+th {
+  background-color: #e0e0e0; /* Light background for table headers */
+}
+
+td {
+  text-align: center;
+}

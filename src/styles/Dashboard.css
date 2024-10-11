@@ -1,0 +1,16 @@
+/* src/styles/Dashboard.css */
+
+h1 {
+  margin-bottom: 15px;
+  color: white; /* Change the text color to a dark color */
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+.container {
+  padding: 20px;
+  background-color: #f4f4f4; /* Add a light background to ensure contrast */
+  color: #333; /* Ensure text color is dark */
+}

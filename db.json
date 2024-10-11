@@ -1,0 +1,46 @@
+{
+  "expenses": [
+    {
+      "id": "1",
+      "name": "Groceries",
+      "amount": 50,
+      "date": "2024-10-01"
+    },
+    {
+      "id": "2",
+      "name": "Electricity Bill",
+      "amount": 120,
+      "date": "2024-10-05"
+    },
+    {
+      "id": "3",
+      "name": "Internet",
+      "amount": 60,
+      "date": "2024-10-08"
+    },
+    {
+      "id": "4",
+      "name": "Travel",
+      "amount": 500,
+      "date": "2024-01-01"
+    },
+    {
+      "id": "d7dd",
+      "name": "Lodging",
+      "amount": 130,
+      "date": "2024-10-11"
+    },
+    {
+      "id": "40ba",
+      "name": "Phone",
+      "amount": 109,
+      "date": "2024-10-12"
+    },
+    {
+      "id": "50d7",
+      "name": "Entertainment",
+      "amount": 480,
+      "date": "2024-10-11"
+    }
+  ]
+}

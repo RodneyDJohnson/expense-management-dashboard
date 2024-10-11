@@ -1,10 +1,18 @@
 // src/components/Navbar.tsx
-import React from "react";
-
 const Navbar = () => {
   return (
     <nav>
-      <h1>Expense Management Dashboard</h1>
+      <ul>
+        <li>
+          <a href="/">Dashboard</a>
+        </li>
+        <li>
+          <a href="/expenses">Expenses</a>
+        </li>
+        <li>
+          <a href="/reports">Reports</a>
+        </li>
+      </ul>
     </nav>
   );
 };
