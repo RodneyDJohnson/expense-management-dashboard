@@ -1,16 +1,113 @@
-/* src/styles/Dashboard.css */
-
-h1 {
-  margin-bottom: 15px;
-  color: white; /* Change the text color to a dark color */
+/* Ensure the root and body take full height */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #232222; /* Dark background for contrast */
+  font-family: Arial, sans-serif;
 }
 
+body {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  background-color: #f9f9f9; /* Optional: Lighter background for contrast */
+}
+
+/* App container ensures spacing from the header */
+.app-container {
+  padding-top: 60px; /* Account for the fixed header */
+  text-align: center; /* Center content */
+}
+
+/* Content block for centering the main dashboard */
+.content {
+  max-width: 1000px;
+  margin: 0 auto; /* Horizontally center the content */
+  padding: 20px; /* Optional padding */
+}
+
+/* Root div takes up full height */
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align content at the top */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Dashboard container: Centers all dashboard elements */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: flex-start; /* Align items starting from the top */
+  min-height: 100vh; /* Full viewport height */
+  width: 100%; /* Full width of the viewport */
+  max-width: 1200px; /* Limit the width for larger screens */
+  margin: 0 auto; /* Center the container horizontally */
+  padding-top: 150px;
+  box-sizing: border-box;
+  background-color: #272727; /* Optional: Add a background color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow for a clean look */
+}
+
+/* Center title */
+.dashboard-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fff; /* White color for better readability */
+}
+
+/* Style form and table */
+.dashboard-form,
+.dashboard-table {
+  width: 100%; /* Full width */
+  max-width: 800px; /* Limit maximum width */
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Ensure table takes full width */
+.dashboard-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  padding: 12px 20px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+.dashboard-table th {
+  background-color: #5c5a5a;
+  color: white;
+}
+
+/* Ensure form is centered and full width */
 form {
+  width: 100%;
+  max-width: 800px;
   margin-bottom: 20px;
 }
 
-.container {
-  padding: 20px;
-  background-color: #f4f4f4; /* Add a light background to ensure contrast */
-  color: #333; /* Ensure text color is dark */
+/* Optional: Change button styles within the form */
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #45a049;
 }

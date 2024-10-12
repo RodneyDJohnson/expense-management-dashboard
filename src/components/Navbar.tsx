@@ -1,4 +1,5 @@
 // src/components/Navbar.tsx
+import "../components/Navbar";
 const Navbar = () => {
   return (
     <nav>

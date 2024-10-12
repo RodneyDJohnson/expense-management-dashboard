@@ -1,25 +1,35 @@
 /* src/styles/ExpenseTable.css */
+/* Center the table on the page */
+.table-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
 
+/* Style the table */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-  background-color: #fff; /* Set table background to white */
-  color: #333; /* Ensure text color is dark */
 }
 
 th,
 td {
-  border: 1px solid #ccc;
   padding: 10px;
   text-align: left;
-  color: #333; /* Set text color to dark */
+  border-bottom: 1px solid #ddd;
 }
 
 th {
-  background-color: #e0e0e0; /* Light background for table headers */
+  background-color: #4caf50;
+  color: white;
 }
 
-td {
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Make sure table is aligned properly */
+tbody td {
   text-align: center;
 }

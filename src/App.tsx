@@ -1,11 +1,14 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Dashboard from "./pages/Dashboard";
-import Reports from "./pages/Reports";
-import ExpenseTable from "./components/ExpenseTable";
 import { useState, useEffect } from "react";
+import Header from "./components/Header";
+import Dashboard from "./pages/Dashboard";
+import ExpenseTable from "./components/ExpenseTable";
+import Reports from "./pages/Reports";
+import Footer from "./components/Footer";
 import axios from "axios";
 
+// Define the type for the expenses
 interface Expense {
   id: number;
   name: string;
@@ -13,12 +16,13 @@ interface Expense {
   date: string;
 }
 
-function App() {
+const App = () => {
   const [expenses, setExpenses] = useState<Expense[]>([]);
 
+  // Fetch the expenses from the API
   useEffect(() => {
     axios
-      .get("http://localhost:3000/expenses")
+      .get("http://localhost:3000/expenses") // Replace this URL with your actual API
       .then((response) => {
         setExpenses(response.data);
       })
@@ -29,18 +33,22 @@ function App() {
 
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/reports" element={<Reports />} />
-        {/* Ensure this route renders only ExpenseTable */}
-        <Route
-          path="/expenses"
-          element={<ExpenseTable expenses={expenses} />}
-        />
-      </Routes>
+      <div className="app-container">
+        <Header /> {/* Header is placed here, it will persist across pages */}
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route
+              path="/expenses"
+              element={<ExpenseTable expenses={expenses} />} // Passing expenses to the ExpenseTable
+            />
+            <Route path="/reports" element={<Reports />} />
+          </Routes>
+        </div>
+        <Footer /> {/* Footer placed at the bottom */}
+      </div>
     </Router>
   );
-}
+};
 
 export default App;

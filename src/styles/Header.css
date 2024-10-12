@@ -1,0 +1,40 @@
+/* styles/Header.css */
+.header {
+  background-color: #333;
+  color: white;
+  padding: -1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 80px; /* Ensure header has a fixed height */
+}
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-links ul {
+  display: flex; /* Align the items horizontally */
+  justify-content: space-around; /* Evenly space the items */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline; /* Ensure the list items are inline */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}

@@ -27,26 +27,38 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({ refreshExpenses }) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <label htmlFor="name">Expense Name:</label>
       <input
         type="text"
+        id="name"
+        name="name"
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder="Expense name"
         required
       />
+
+      <label htmlFor="amount">Amount:</label>
       <input
         type="number"
+        id="amount"
+        name="amount"
         value={amount}
         onChange={(e) => setAmount(Number(e.target.value))}
         placeholder="Amount"
         required
       />
+
+      <label htmlFor="date">Date:</label>
       <input
         type="date"
+        id="date"
+        name="date"
         value={date}
         onChange={(e) => setDate(e.target.value)}
         required
       />
+
       <button type="submit">Add Expense</button>
     </form>
   );

@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ExpenseForm from "../components/ExpenseForm";
-import ExpenseTable from "../components/ExpenseTable";
+//import ExpenseTable from "../components/ExpenseTable";
 import "../styles/Dashboard.css";
+import ExpenseTable from "../components/ExpenseTable";
+
 const Dashboard = () => {
   const [expenses, setExpenses] = useState([]);
 
@@ -23,13 +23,12 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Expense Management Dashboard</h1>
-
-      {/* Render the Expense Form at the top */}
+    <div className="dashboard-container">
+      <h1 className="dashboard-title">Expense Management Dashboard</h1>
+      {/* Render the Expense Form */}
       <ExpenseForm refreshExpenses={fetchExpenses} />
-
       {/* Render the Expense Table below the form */}
+
       <ExpenseTable expenses={expenses} />
     </div>
   );
