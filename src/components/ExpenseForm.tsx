@@ -15,50 +15,47 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({ refreshExpenses }) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const newExpense = { name, amount, date };
+    const newExpense = {
+      id: Math.random().toString(36).substr(2, 9), // Unique ID for each expense
+      name,
+      amount,
+      date,
+    };
 
     try {
-      await axios.post("http://localhost:3000/expenses", newExpense);
+      const response = await axios.post(
+        "http://localhost:3000/expenses",
+        newExpense
+      );
+      console.log("Expense added:", response.data); // Log the response to see if the request was successful
       refreshExpenses(); // Trigger fetching updated expenses list
     } catch (error) {
-      console.error("Error adding expense:", error);
+      console.error("Error adding expense:", error); // Log the error for further diagnosis
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Expense Name:</label>
       <input
         type="text"
-        id="name"
-        name="name"
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder="Expense name"
         required
       />
-
-      <label htmlFor="amount">Amount:</label>
       <input
         type="number"
-        id="amount"
-        name="amount"
         value={amount}
         onChange={(e) => setAmount(Number(e.target.value))}
         placeholder="Amount"
         required
       />
-
-      <label htmlFor="date">Date:</label>
       <input
         type="date"
-        id="date"
-        name="date"
         value={date}
         onChange={(e) => setDate(e.target.value)}
         required
       />
-
       <button type="submit">Add Expense</button>
     </form>
   );

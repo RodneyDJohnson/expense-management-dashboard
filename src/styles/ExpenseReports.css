@@ -1,0 +1,61 @@
+/* src/styles/ExpenseReports.css */
+
+/* Center the content on the page */
+.expense-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  background-color: #f7f7f7; /* Light background for a soft look */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Page title styling */
+.expense-title {
+  font-size: 2rem;
+  color: #6b8e23; /* A soft green tone */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Form styling */
+.expense-form {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input fields */
+.expense-form input,
+.expense-form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Submit button */
+.expense-form button {
+  background-color: #6b8e23;
+  color: white;
+  cursor: pointer;
+}
+
+.expense-form button:hover {
+  background-color: #556b2f;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .expense-container {
+    width: 95%;
+    padding: 10px;
+  }
+}

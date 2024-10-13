@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Dashboard from "./pages/Dashboard";
 import ExpenseTable from "./components/ExpenseTable";
-import Reports from "./pages/Reports";
+import Reports from "./pages/ExpenseReports";
 import Footer from "./components/Footer";
 import axios from "axios";
 
@@ -37,7 +37,16 @@ const App = () => {
         <Header /> {/* Header is placed here, it will persist across pages */}
         <div className="content">
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route
+              path="/"
+              element={
+                <Dashboard
+                  refreshExpenses={function (): void {
+                    throw new Error("Function not implemented.");
+                  }}
+                />
+              }
+            />
             <Route
               path="/expenses"
               element={<ExpenseTable expenses={expenses} />} // Passing expenses to the ExpenseTable

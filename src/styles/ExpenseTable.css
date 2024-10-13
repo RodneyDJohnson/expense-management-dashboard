@@ -4,6 +4,10 @@
   width: 80%;
   margin: 0 auto;
   text-align: center;
+  padding: 20px;
+  background-color: #f7f7f7; /* Light background to soften */
+  border-radius: 10px; /* Rounded corners for a softer look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 /* Style the table */
@@ -11,25 +15,70 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  border-radius: 10px; /* Make the table corners rounded */
+  overflow: hidden; /* Hide overflow for rounded corners */
 }
 
+/* Table headers */
 th,
 td {
-  padding: 10px;
+  padding: 12px 15px;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
 
 th {
-  background-color: #4caf50;
+  background-color: #6b8e23; /* A soft, earthy green */
   color: white;
+  font-size: 1.1rem;
 }
 
 tr:hover {
-  background-color: #f5f5f5;
+  background-color: #f0f0f0; /* Softer hover color */
 }
 
-/* Make sure table is aligned properly */
-tbody td {
-  text-align: center;
+td {
+  font-size: 1rem;
+  color: #333; /* Dark gray for better readability */
+}
+
+tfoot td {
+  padding-top: 15px;
+  font-weight: bold;
+  text-align: left;
+  border-top: 2px solid #6b8e23; /* Match the header color */
+}
+
+tfoot td:nth-child(2) {
+  text-align: right; /* Align total under the correct column */
+}
+
+tfoot td:nth-child(3) {
+  display: none; /* Hide unnecessary column for total row */
+}
+
+/* Subtle button style for any future action buttons */
+button {
+  background-color: #6b8e23;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #556b2f;
+}
+
+/* Adjust mobile responsiveness */
+@media (max-width: 768px) {
+  .table-container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
 }
