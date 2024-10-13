@@ -1,70 +1,33 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-floating-promises */
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
+import ExpenseForm from "../components/ExpenseForm";
+import "../styles/Dashboard.css";
 
-interface ExpenseFormProps {
-  refreshExpenses: () => void; // Callback to refresh the expenses list
-}
+const Dashboard = () => {
+  const [expenses, setExpenses] = useState([]);
 
-const ExpenseForm: React.FC<ExpenseFormProps> = ({ refreshExpenses }) => {
-  const [name, setName] = useState<string>("");
-  const [amount, setAmount] = useState<number>(0);
-  const [date, setDate] = useState<string>("");
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const newExpense = { name, amount, date };
-
+  // Fetch expenses from the JSON server
+  const fetchExpenses = async () => {
     try {
-      const response = await axios.post(
-        "http://localhost:3000/expenses",
-        newExpense
-      );
-      console.log("Expense added:", response.data);
-      refreshExpenses(); // Trigger fetching updated expenses list
+      const response = await axios.get("http://localhost:3000/expenses");
+      setExpenses(response.data);
     } catch (error) {
-      console.error("Error adding expense:", error);
+      console.error("Error fetching expenses:", error);
     }
   };
 
+  useEffect(() => {
+    fetchExpenses(); // Fetch expenses when the component mounts
+  }, []);
+
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="expense-name">Expense Name:</label>
-      <input
-        type="text"
-        id="expense-name"
-        name="expenseName"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Expense name"
-        required
-      />
-
-      <label htmlFor="expense-amount">Amount:</label>
-      <input
-        type="number"
-        id="expense-amount"
-        name="expenseAmount"
-        value={amount}
-        onChange={(e) => setAmount(Number(e.target.value))}
-        placeholder="Amount"
-        required
-      />
-
-      <label htmlFor="expense-date">Date:</label>
-      <input
-        type="date"
-        id="expense-date"
-        name="expenseDate"
-        value={date}
-        onChange={(e) => setDate(e.target.value)}
-        required
-      />
-
-      <button type="submit">Add Expense</button>
-    </form>
+    <div className="dashboard-container">
+      <h1 className="dashboard-title">Expense Management Dashboard</h1>
+      {/* Render the Expense Form and pass refreshExpenses */}
+      <ExpenseForm refreshExpenses={fetchExpenses} />
+    </div>
   );
 };
 
-export default ExpenseForm;
+export default Dashboard;

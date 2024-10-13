@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -15,22 +13,17 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({ refreshExpenses }) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const newExpense = {
-      id: Math.random().toString(36).substr(2, 9), // Unique ID for each expense
-      name,
-      amount,
-      date,
-    };
+    const newExpense = { name, amount, date };
 
     try {
       const response = await axios.post(
         "http://localhost:3000/expenses",
         newExpense
       );
-      console.log("Expense added:", response.data); // Log the response to see if the request was successful
+      console.log("Expense added:", response.data);
       refreshExpenses(); // Trigger fetching updated expenses list
     } catch (error) {
-      console.error("Error adding expense:", error); // Log the error for further diagnosis
+      console.error("Error adding expense:", error);
     }
   };
 

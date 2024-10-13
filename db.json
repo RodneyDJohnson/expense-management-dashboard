@@ -47,6 +47,54 @@
       "name": "Facility Management",
       "amount": 601,
       "date": "2024-10-12"
+    },
+    {
+      "id": "b1a5",
+      "name": "Door Replacement",
+      "amount": 555,
+      "date": "2024-10-05"
+    },
+    {
+      "id": "d874",
+      "name": "Door Replacement",
+      "amount": 555,
+      "date": "2024-10-05"
+    },
+    {
+      "id": "358e",
+      "name": "Door Replacement",
+      "amount": 555,
+      "date": "2024-10-05"
+    },
+    {
+      "id": "0f72",
+      "name": "Door Replacement",
+      "amount": 555,
+      "date": "2024-10-05"
+    },
+    {
+      "id": "5ad4",
+      "name": "Door Replacement",
+      "amount": 555,
+      "date": "2024-10-05"
+    },
+    {
+      "id": "4288",
+      "name": "Door Replacement",
+      "amount": 555,
+      "date": "2024-10-05"
+    },
+    {
+      "id": "c793",
+      "name": "Door Replacement",
+      "amount": 555,
+      "date": "2024-10-13"
+    },
+    {
+      "id": "99de",
+      "name": "Book",
+      "amount": 33,
+      "date": "2024-10-13"
     }
   ]
 }
