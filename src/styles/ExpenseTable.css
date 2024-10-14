@@ -1,13 +1,12 @@
 /* src/styles/ExpenseTable.css */
-/* Center the table on the page */
+/* src/styles/ExpenseTable.css */
 .table-container {
   width: 80%;
   margin: 0 auto;
   text-align: center;
-  padding: 20px;
-  background-color: #f7f7f7; /* Light background to soften */
-  border-radius: 10px; /* Rounded corners for a softer look */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-height: 400px; /* Set a max height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border: 1px solid #ccc; /* Optional: Add a border */
 }
 
 /* Style the table */
@@ -19,7 +18,14 @@ table {
   overflow: hidden; /* Hide overflow for rounded corners */
 }
 
-/* Table headers */
+/* Add some styling for the title */
+.expense-title {
+  font-size: 2rem;
+  color: #6b8e23; /* Soft green color */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 th,
 td {
   padding: 12px 15px;
@@ -28,25 +34,26 @@ td {
 }
 
 th {
-  background-color: #6b8e23; /* A soft, earthy green */
+  background-color: #4caf50;
   color: white;
   font-size: 1.1rem;
 }
 
 tr:hover {
-  background-color: #f0f0f0; /* Softer hover color */
+  background-color: #f13838; /* Change hover color */
 }
-
-td {
-  font-size: 1rem;
-  color: #333; /* Dark gray for better readability */
-}
-
 tfoot td {
   padding-top: 15px;
   font-weight: bold;
   text-align: left;
   border-top: 2px solid #6b8e23; /* Match the header color */
+}
+/* Make sure table is aligned properly */
+tfoot td {
+  padding-top: 15px;
+  font-weight: bold;
+  text-align: left;
+  border-top: 2px solid #4caf50; /* Separate total row with a distinct border */
 }
 
 tfoot td:nth-child(2) {
@@ -54,9 +61,8 @@ tfoot td:nth-child(2) {
 }
 
 tfoot td:nth-child(3) {
-  display: none; /* Hide unnecessary column for total row */
+  display: right; /* Hide the 3rd column (if not needed for total calculation) */
 }
-
 /* Subtle button style for any future action buttons */
 button {
   background-color: #6b8e23;

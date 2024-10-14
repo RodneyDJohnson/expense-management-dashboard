@@ -19,16 +19,21 @@ interface ExpenseTableProps {
 
 const ExpenseTable: React.FC<ExpenseTableProps> = ({ expenses }) => {
   // Calculate the total of all expenses
-  const total = expenses.reduce((sum, expense) => sum + expense.amount, 0);
+  const total = expenses.reduce(
+    (sum, expense) => sum + (expense.amount || 0),
+    0
+  );
 
   return (
     <div className="table-container">
+      {/* Add the title here */}
+      <h2 className="expense-title">Expenses</h2> {/* Title for the table */}
       <table>
         <thead>
           <tr>
             <th>Name</th>
-            <th>Amount</th>
-            <th>Date</th>
+            <th>Date</th> {/* Swapped Date here */}
+            <th>Amount</th> {/* Swapped Amount here */}
           </tr>
         </thead>
 
@@ -36,8 +41,8 @@ const ExpenseTable: React.FC<ExpenseTableProps> = ({ expenses }) => {
           {expenses.map((expense) => (
             <tr key={expense.id}>
               <td>{expense.name}</td>
-              <td>${expense.amount}</td>
-              <td>{expense.date}</td>
+              <td>{expense.date}</td> {/* Swapped Date here */}
+              <td>${expense.amount}</td> {/* Swapped Amount here */}
             </tr>
           ))}
         </tbody>
@@ -45,7 +50,8 @@ const ExpenseTable: React.FC<ExpenseTableProps> = ({ expenses }) => {
         <tfoot>
           <tr>
             <td>Total:</td>
-            <td>${total}</td>
+            <td></td> {/* Empty column under Date */}
+            <td>${total.toFixed(2)}</td> {/* Total under Amount */}
           </tr>
         </tfoot>
       </table>
