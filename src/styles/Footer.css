@@ -8,9 +8,32 @@
   position: relative;
   bottom: 0;
   left: 0;
+
+  /* Add rounded corners */
+  border-radius: 10px;
+
+  /* Add a soft shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* Add margin to separate it from the rest of the page */
+  margin-top: 20px;
 }
 
+/* Styling for the paragraph text in the footer */
 .footer p {
   margin: 0;
   font-size: 1rem;
+  padding: 10px;
+  color: #f7f7f7; /* Light color for contrast */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .footer {
+    padding: 15px 0;
+  }
+
+  .footer p {
+    font-size: 0.9rem;
+  }
 }

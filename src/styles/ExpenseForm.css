@@ -6,7 +6,7 @@ form {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #6b8e23;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
   display: flex;
@@ -18,9 +18,10 @@ form {
 input {
   width: calc(100% - 24px); /* Prevents overflow */
   padding: 12px;
+  background-color: black;
   margin-bottom: 10px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #6b8e23;
   font-size: 1rem;
 }
 

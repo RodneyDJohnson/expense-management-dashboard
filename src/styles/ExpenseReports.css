@@ -1,61 +1,60 @@
 /* src/styles/ExpenseReports.css */
 
-/* Center the content on the page */
-.expense-container {
+/* Container for the entire report page */
+.reports-container {
   width: 80%;
   margin: 0 auto;
-  text-align: center;
   padding: 20px;
-  background-color: #f7f7f7; /* Light background for a soft look */
+  background-color: whitesmoke; /* Light background for a soft look */
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Page title styling */
-.expense-title {
-  font-size: 2rem;
-  color: #6b8e23; /* A soft green tone */
-  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   text-align: center;
 }
 
-/* Form styling */
-.expense-form {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Input fields */
-.expense-form input,
-.expense-form button {
-  width: 100%;
-  padding: 10px;
+/* Title Styling */
+.reports-container h1 {
+  font-size: 2.5rem;
+  color: #333;
+  padding-top: 20px;
   margin-bottom: 20px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
 }
 
-/* Submit button */
-.expense-form button {
+/* Summary section for the report */
+.report-summary {
   background-color: #6b8e23;
-  color: white;
-  cursor: pointer;
+  padding: 15px;
+  margin-bottom: 4px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: black;
 }
 
-.expense-form button:hover {
-  background-color: #556b2f;
+/* Chart container */
+.report-chart {
+  margin-bottom: 30px;
+}
+
+/* Table container to style the table section */
+.report-table {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure the chart container fits well */
+.report-chart {
+  max-width: 100%;
+  height: 400px;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .expense-container {
+  .reports-container {
     width: 95%;
-    padding: 10px;
+  }
+
+  .report-chart {
+    height: 20px;
   }
 }
