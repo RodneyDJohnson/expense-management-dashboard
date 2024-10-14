@@ -38,19 +38,16 @@
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 1rem;
-  color: #ccc;
 }
 
 /* Button styling */
+/* Button styling */
 .dashboard-form button {
-  width: 100%; /* Matches the input field width */
+  width: 100%; /* Ensure the button matches the input field width */
   padding: 12px;
-  background-color: #040504;
+  background-color: #040504; /* Corrected the syntax here */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  margin-top: 10px; /* Adds space between the button and the input field above */
-  font-size: smaller;
-  color: #ccc;
 }
 
 .dashboard-form button:hover {
